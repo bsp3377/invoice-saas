@@ -1,0 +1,14 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-invoicesaas-dev-authRole",
+      "UnauthRoleArn": "arn:aws:iam::746413875018:role/amplify-invoicesaas-dev-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::746413875018:role/amplify-invoicesaas-dev-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-invoicesaas-dev-deployment",
+      "UnauthRoleName": "amplify-invoicesaas-dev-unauthRole",
+      "StackName": "amplify-invoicesaas-dev",
+      "StackId": "arn:aws:cloudformation:us-east-1:746413875018:stack/amplify-invoicesaas-dev"
+    }
+  }
+}

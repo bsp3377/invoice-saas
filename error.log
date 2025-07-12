@@ -1,0 +1,64 @@
+error:
+       … while calling the 'derivationStrict' builtin
+
+         at /builtin/derivation.nix:9:12: (source not available)
+
+       … while evaluating derivation 'idx-template'
+         whose name attribute is located at /nix/store/g8zzlf6drg73c987ii390yicq4c0j778-source/pkgs/stdenv/generic/make-derivation.nix:348:7
+
+       … while evaluating attribute 'text' of derivation 'idx-template'
+
+         at /nix/store/g8zzlf6drg73c987ii390yicq4c0j778-source/pkgs/build-support/trivial-builders/default.nix:148:16:
+
+          147|     runCommand name
+          148|       { inherit text executable checkPhase allowSubstitutes preferLocalBuild;
+             |                ^
+          149|         passAsFile = [ "text" ];
+
+       … while evaluating derivation 'usr-env'
+         whose name attribute is located at /nix/store/g8zzlf6drg73c987ii390yicq4c0j778-source/pkgs/stdenv/generic/make-derivation.nix:348:7
+
+       … while evaluating attribute 'buildCommand' of derivation 'usr-env'
+
+         at /nix/store/g8zzlf6drg73c987ii390yicq4c0j778-source/pkgs/build-support/trivial-builders/default.nix:87:14:
+
+           86|       enableParallelBuilding = true;
+           87|       inherit buildCommand name;
+             |              ^
+           88|       passAsFile = [ "buildCommand" ]
+
+       … while evaluating derivation 'sandbox'
+         whose name attribute is located at /nix/store/g8zzlf6drg73c987ii390yicq4c0j778-source/pkgs/stdenv/generic/make-derivation.nix:348:7
+
+       … while evaluating attribute 'passAsFile' of derivation 'sandbox'
+
+         at /nix/store/g8zzlf6drg73c987ii390yicq4c0j778-source/pkgs/build-support/trivial-builders/default.nix:88:7:
+
+           87|       inherit buildCommand name;
+           88|       passAsFile = [ "buildCommand" ]
+             |       ^
+           89|         ++ (derivationArgs.passAsFile or []);
+
+       … from call site
+
+         at /nix/store/yc047jy4llmg9lldkandzb0cdrw8i1ll-python3.11-idx-template/lib/python3.11/site-packages/idxtemplate/data/templates.nix:78:22:
+
+           77|     let
+           78|       templateRepo = utils.fetchTree templateRepoUrl;
+             |                      ^
+           79|
+
+       … while calling 'fetchTree'
+
+         at /nix/store/yc047jy4llmg9lldkandzb0cdrw8i1ll-python3.11-idx-template/lib/python3.11/site-packages/idxtemplate/data/utils.nix:18:15:
+
+           17|   */
+           18|   fetchTree = ref:
+             |               ^
+           19|     let
+
+       error: unable to download 'https://api.github.com/repos/firebase-studio/templates/commits/main': HTTP error 403
+
+       response body:
+
+       {"message":"API rate limit exceeded for 35.201.248.4. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.)","documentation_url":"https://docs.github.com/rest/overview/resources-in-the-rest-api#rate-limiting"}
